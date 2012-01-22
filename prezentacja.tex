@@ -5,10 +5,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[scriptsize]{caption}
+\usepackage{listings}
+\usepackage{verbatim}
+
 \title{Parallel Gaussian Elimination}
 \author{Szymon Maj \& Jarosław Szczęśniak}
 \institute{Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
 \begin{document}
+\lstset{breakatwhitespace=true,
+language=C++,
+columns=fullflexible,
+keepspaces=true,
+breaklines=true,
+tabsize=3, 
+showstringspaces=false,
+extendedchars=true,
+numbers=left,
+numberstyle=\tiny,
+frame=leftline}
+
 
 	\begin{frame}
 		\titlepage
@@ -82,6 +97,25 @@
 			\item Problemem jest narzut komunikacji
 		\end{itemize}
 	\end{frame}
+	
+	\section{Pseudokod równoległego algorytmu}
+	\begin{frame}[fragile]	
+
+\begin{semiverbatim}
+\scriptsize
+\begin{lstlisting}
+for pivot_row in (0..n)
+    parallel for row in (pivot_row+1..n)
+    factor = A[pivot_row][0]/A[row][0]
+        for col in (0..n)
+            A[row][col] = A[row][col]*factor - A[pivot_row][col]
+        end
+    end
+end
+\end{lstlisting}
+\end{semiverbatim}
+	\end{frame}
+	
 	\section{Wyniki równoległego algorytmu}
 	\begin{frame}
 		\begin{figure}

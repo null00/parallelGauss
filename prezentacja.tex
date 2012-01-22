@@ -20,9 +20,15 @@
 		\newline \\
 		Pozwala na:
 		\begin{itemize}
-			\item rozwiązanie układó równań liniowych,
+			\item rozwiązanie układów równań liniowych,
 			\item obliczanie rzędu macierzy,
-			\item obliczanie macierzy odwrotnej.
+			\item obliczanie macierzy odwrotnej,
+			\item obliczanie wyznacznika macierzy:
+				\begin{itemize}
+					\item Dodawanie wierszy nie zmienia wartości wyznacznika.
+					\item Pomnożenie wiersza powoduje pomnożenie wyznacznika.
+					\item Zamiana dwóch wierszy (lub kolumn) zmienia znak wyznacznika.
+				\end{itemize}
 		\end{itemize}
 	\end{frame}
 	
@@ -36,7 +42,7 @@
 		\column{1.5in}
 			\begin{figure}
 				\includegraphics[scale=0.3]{gfx/Carl_Friedrich_Gauss.jpg}
-%				\caption{ Strona z ,,The Nine Chapters on the Mathematical Art’’ }
+%				\caption{ Carl Friedrich Gauss }
 			\end{figure}
 			\begin{figure}
 				\includegraphics[scale=0.2]{gfx/tncotma.png}
@@ -75,6 +81,17 @@
 			\item Z każdym kolejnym krokiem ilość operacji zmniejsza się
 			\item Problemem jest narzut komunikacji
 		\end{itemize}
+	\end{frame}
+	\section{Wyniki równoległego algorytmu}
+	\begin{frame}
+		\begin{figure}
+			\includegraphics[scale=0.3]{gfx/mpi_2proc.png}
+			\caption{ Wyniki równoległego algorytmu wykonanego przez 2 procesory \cite{pge} }
+		\end{figure}
+		\begin{figure}
+			\includegraphics[scale=0.3]{gfx/mpi_4proc.png}
+			\caption{ Wyniki równoległego algorytmu wykonanego przez 4 procesory \cite{pge} }
+		\end{figure}
 	\end{frame}
 
 	\section{Bibliografia}

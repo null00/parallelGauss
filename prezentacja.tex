@@ -116,6 +116,17 @@ end
 \end{semiverbatim}
 	\end{frame}
 	
+	\section{Algorytm równoległy - pamięć rozproszona}
+	\begin{frame}
+		\begin{itemize}
+			\item W każdym kroku konieczna jest synchronizacja pamięci
+			\item Wyniki operacji odejmowania w wierszach innych niż następny pivot nie są potrzebne
+			\item Przed kolejnym krokiem wystarczy udostępnić zawartość pivota do wszystkich procesorów
+			\item Jednak pivot musi zostać wysłany w całości i do każdego z procesorów
+			\item Ponadto rozmiar pivota jest zależny liniowo od rozmiaru problemu
+		\end{itemize}
+	\end{frame}
+	
 	\section{Wyniki równoległego algorytmu}
 	\begin{frame}
 		\begin{figure}
